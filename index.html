@@ -6,7 +6,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Iterable Campaign Naming</title>
+  <title>Braze Campaign Naming</title>
   <meta name="robots" content="noindex">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -41,49 +41,84 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container" style="margin-top: 5%; margin-bottom: 10%;">
+  <div class="container" style="margin-top: 5%; margin-bottom: 10%;" id="main">
     <div class="row">
       <div class="one-half column">
-        <h4>Iterable Campaign Naming</h4>
+        <h4>Braze Campaign Naming</h4>
         <p>Enter your information below to generate your campaigns name using the correct naming convention.</p>
       </div>
     </div>
+    <!---------->
 
+    <div class="row">
+      <div class="one-half column">
+        <div> <label for="type">Type</label>
+          <select class="u-full-width" id="type">
+            <option disabled selected value> -- select an option -- </option>
+            <option value="TRG">Trigger</option>
+            <option value="REC">Recurring</option>
+            <option value="BAT">Batch</option>
+          </select></div>
+      </div>
+    </div>
     <!---------->
     <div class="row">
       <div class="one-half column">
 
-        <div> <label for="campaignName">Campaign Name</label>
-          <input class="u-full-width" type="text" placeholder="" id="campaignName">
+        <div> <label for="campaignName">Send Date (MMDDYY)</label>
+          <input class="u-full-width" type="text" placeholder="" id="sendDate" maxlength="6">
         </div>
       </div>
     </div>
     <!---------->
+<!--
     <div class="row">
       <div class="one-half column">
-
-        <div> <label for="campaignType">Type</label>
-          <select class="u-full-width" id="campaignType">
+        <div> <label for="channel">Channel</label>
+          <select class="u-full-width" id="channel">
             <option disabled selected value> -- select an option -- </option>
-            <option value="Batch">Batch</option>
-            <option value="Recurring">Recurring</option>
-            <option value="Trigger">Trigger</option>
+            <option value="EML">Email</option>
+            <option value="PSH">Push</option>
+            <option value="IOS">iOS</option>
+            <option value="AND">Android</option>
+            <option value="SMS">SMS</option>
+            <option value="MULTI">Multi</option>
           </select></div>
       </div>
     </div>
+  -->
     <!---------->
+
     <div class="row">
       <div class="one-half column">
 
-        <div> <label for="campaignAudience">Who are you sending to?</label>
-          <select class="u-full-width" id="campaignAudience">
+        <div> <label for="campaignName">Campaign Name</label>
+          <input class="u-full-width" type="text" placeholder="" id="campaignName" maxlength="13">
+        </div>
+      </div>
+    </div>
+    <!---------->
+
+    <div class="row">
+      <div class="one-half column">
+        <div> <label for="messageType">Message Type</label>
+          <select class="u-full-width" id="messageType">
             <option disabled selected value> -- select an option -- </option>
-            <option value="Cx">Consumers</option>
-            <option value="Mx">Merchants</option>
-            <option value="Dx">Dashers</option>
+            <option value="NU">News + Updates</option>
+            <option value="NR">Notifications + Reminders</option>
+            <option value="R">Recommendations</option>
+            <option value="SO">Special Offers</option>
+            <option value="SP">Store Promotions</option>
+            <option value="CR">Customer Research</option>
+            <option value="DDfW_CR">DDfW Customer Research</option>
+            <option value="DDfW_NPU">DDfW News and Product Updates</option>
+            <option value="DDfW_NR">DDfW Notifications & Reminders</option>
+            <option value="DDfW_SI">DDfW Sales Information</option>
+            <option value="DDfW_API">DDfW Account Performance & Insights</option>
+            <option value="DDfW_ASE">DDfW Account Support and Education</option>
+            <option value="DDfW_SO">DDfW Special Offers</option>
           </select></div>
       </div>
-
     </div>
     <!---------->
 
@@ -92,10 +127,16 @@
         <div> <label for="campaignFrom">Sent From</label>
           <select class="u-full-width" id="campaignFrom">
             <option disabled selected value> -- select an option -- </option>
-            <option value="HQ Brand">HQ Brand</option>
-            <option value="HQ CRM">HQ Retention</option>
-            <option value="HQ Dasher">HQ Dasher</option>
-            <option value="HQ Other">HQ Other</option>
+            <option value="CA">CA</option>
+            <option value="US">US</option>
+            <option value="AUS">AUS</option>
+            <option value="NZ">NZ</option>
+            <option value="HQ CRM">HQ CRM</option>
+            <!--
+            <option value="HQ_Brand">HQ Brand</option>
+            <option value="HQ_CRM">HQ Retention</option>
+            <option value="HQ_Dasher">HQ Dasher</option>
+            <option value="HQ_Other">HQ Other</option>
             <option value="Canada">Canada</option>
             <option value="Midwest">Midwest</option>
             <option value="Mountain">Mountain</option>
@@ -108,6 +149,7 @@
             <option value="Tristate">Tristate</option>
             <option value="Australia">Australia</option>
             <option value="Northeast">Northeast</option>
+-->
           </select></div>
       </div>
     </div>
@@ -122,19 +164,20 @@
             <option value="RegMx">Merchandising - Single Merchant, Regional</option>
             <option value="Multmx">Merchandising - Multiple Merchants</option>
             <option value="Brand">Brand</option>
-            <option value="Prod">Product Feature</option>
-            <option value="Info">Informational</option>
-            <option value="Trans">Transactional</option>
-            <option value="Launch">Launch</option>
-            <option value="Ref">Referral Program</option>
-            <option value="Other">Other</option>
-            <option value="Act">Activation</option>
+            <!-- <option value="Prod">Product Feature</option> -->
+            <!-- <option value="Info">Informational</option> -->
+            <!-- <option value="Trans">Transactional</option> -->
+            <!-- <option value="Launch">Launch</option> -->
+            <!-- <option value="Ref">Referral Program</option> -->
+            <!-- <option value="Other">Other</option> -->
+            <!-- <option value="Act">Activation</option> -->
             <option value="Adp">Adoption</option>
-            <option value="Exp">Expansion</option>
-            <option value="Ret">Retention</option>
-            <option value="Res">Resurrection</option>
-            <option value="Conv&Groc">Convenience & Grocery</option>
-            <option value="Promo">Promo Only</option>
+            <!-- <option value="Exp">Expansion</option> -->
+            <!-- <option value="Ret">Retention</option> -->
+            <!-- <option value="Res">Resurrection</option> -->
+            <!-- <option value="Conv&Groc">Convenience & Grocery</option> -->
+            <!-- <option value="Promo">Promo Only</option> -->
+            <option value="Other">Other</option>
           </select></div>
       </div>
     </div>
@@ -153,6 +196,43 @@
     </div>
     <!---------->
 
+    <div class="row">
+      <div class="one-half column">
+
+        <div> <label for="test">Test</label>
+          <input class="u-full-width" type="text" placeholder="" id="test" maxlength="6">
+        </div>
+      </div>
+    </div>
+
+    <!---------->
+    <div class="row">
+      <div class="one-half column">
+
+        <div> <label for="step">Step</label>
+          <input class="u-full-width" type="text" placeholder="" id="step" maxlength="6">
+        </div>
+      </div>
+    </div>
+
+    <!---------->
+    <div class="row">
+      <div class="one-half column">
+
+        <div> <label for="language">Language</label>
+          <select class="u-full-width" id="language">
+            <option disabled selected value> -- select an option -- </option>
+            <option value="EN_CA">en-CA</option>
+            <option value="EN_US">en-US</option>
+            <option value="EN_NZ">en-NZ</option>
+            <option value="EN_AUS">en-AUS</option>
+            <option value="FR">fr</option>
+            <!-- <option value="FR_CA">fr-CA</option> -->
+          </select></div>
+      </div>
+
+    </div>
+    <!---------->
 
     <div class="row" style="padding-top: 30px;">
       <div class="one-half column" id="submitDiv">
